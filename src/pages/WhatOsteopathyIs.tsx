@@ -1,10 +1,11 @@
 import type { ReactElement } from "react";
 import SectionHeading from "../components/SectionHeading";
 import SectionName from "../components/SectionName";
+import "../assets/scss/what-osteopathy-is.scss";
 
 const WhatOsteopathyIs = (): ReactElement => {
   return (
-    <div>
+    <div className="what-osteopathy-is">
       <SectionName bgVariant="dark" text="Mitä osteopatia on" />
       <SectionHeading
         bgVariant="dark"
