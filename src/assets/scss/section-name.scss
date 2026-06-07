@@ -1,0 +1,7 @@
+@use "./variables.scss" as *;
+
+.section-name {
+  font-family: $open-sans;
+  font-size: 18px;
+  text-transform: uppercase;
+}

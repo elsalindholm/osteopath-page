@@ -1,0 +1,15 @@
+@use "./variables.scss" as *;
+
+.home {
+  display: flex;
+}
+
+.text-container {
+  width: 50%;
+  background-color: $background--light;
+}
+
+.image-container {
+  width: 50%;
+  background-color: $background--dark;
+}

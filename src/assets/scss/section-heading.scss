@@ -1,0 +1,27 @@
+@use "./variables.scss" as *;
+
+.section-heading {
+  font-size: 32px;
+  font-family: $cormorant-garamond;
+  &--light {
+    color: black;
+    .italics {
+      color: #7a8c5c;
+    }
+  }
+  &--medium {
+    color: black;
+    .italics {
+      color: #3d4230;
+    }
+  }
+  &--dark {
+    color: #ece9e5;
+    .italics {
+      color: #a8b898;
+    }
+  }
+  .italics {
+    font-style: italic;
+  }
+}
