@@ -1,8 +1,10 @@
 @use "./variables.scss" as *;
 
 .section-heading {
-  font-size: 32px;
+  font-size: 40px;
   font-family: $cormorant-garamond;
+  text-align: left;
+  line-height: 1.2;
   &--light {
     color: black;
     .italics {

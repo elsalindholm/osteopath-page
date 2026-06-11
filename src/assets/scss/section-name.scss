@@ -2,6 +2,11 @@
 
 .section-name {
   font-family: $open-sans;
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 2px;
+  &--light {
+    color: $text--medium-green;
+  }
 }

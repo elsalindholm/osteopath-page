@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import "../assets/scss/home.scss";
 import SectionHeading from "../components/SectionHeading";
+import BodyText from "../components/BodyText";
 
 const Home = (): ReactElement => {
   return (
@@ -11,6 +12,10 @@ const Home = (): ReactElement => {
           nonItalics="Tukemassa kehosi"
           italics="luonnollista tasapainoa"
         />
+        <BodyText bgVariant="light">
+          Hellävaraista, ihmislähtöistä, näyttöön perustuvaa osteopaattista
+          hoitoa koko keholle — liiku vapaammin, voi paremmin ja elä täysillä.
+        </BodyText>
       </div>
       <div className="image-container">Image side</div>
     </div>

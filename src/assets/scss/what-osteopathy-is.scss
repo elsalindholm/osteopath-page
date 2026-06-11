@@ -2,5 +2,11 @@
 
 .what-osteopathy-is {
   background-color: $background--dark;
-  padding: 40px;
+  padding: 50px;
+}
+
+.note-card-container {
+  margin-top: 50px;
+  display: flex;
+  gap: 16px;
 }

@@ -1,0 +1,21 @@
+@use "../scss/variables.scss" as *;
+
+$note-card-padding: 20px;
+
+.note-card {
+  padding: $note-card-padding;
+  aspect-ratio: 1 / 1;
+  background-color: $background--light;
+  border: 2px solid #7a8c5c;
+  border-top: 6px solid #7a8c5c;
+  text-align: left;
+  h4 {
+    font-family: $cormorant-garamond;
+    color: #3d4230;
+    font-size: 22px;
+    margin-top: 0;
+  }
+  p {
+    color: #3d4230;
+  }
+}
