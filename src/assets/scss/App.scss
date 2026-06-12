@@ -1,7 +1,10 @@
 @use "./variables.scss" as *;
 
+body {
+  margin: 0;
+}
+
 .app {
-  width: 100vw;
   height: auto;
   min-height: 100vh;
 }

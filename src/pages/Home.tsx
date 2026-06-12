@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 import "../assets/scss/home.scss";
 import SectionHeading from "../components/SectionHeading";
 import BodyText from "../components/BodyText";
+import ButtonLink from "../components/ButtonLink";
 
 const Home = (): ReactElement => {
   return (
@@ -16,6 +17,9 @@ const Home = (): ReactElement => {
           Hellävaraista, ihmislähtöistä, näyttöön perustuvaa osteopaattista
           hoitoa koko keholle — liiku vapaammin, voi paremmin ja elä täysillä.
         </BodyText>
+        <ButtonLink variant="dark" href="#">
+          Varaa aika
+        </ButtonLink>
       </div>
       <div className="image-container">Image side</div>
     </div>

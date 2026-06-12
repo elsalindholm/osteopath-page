@@ -1,20 +1,19 @@
 import "../assets/scss/button-link.scss";
-import type { ReactElement } from "react";
+import type { ComponentProps, ReactElement } from "react";
 
 type Props = {
   variant: "dark";
-  text: string;
   href: string;
-};
+} & ComponentProps<"a">;
 
-const ButtonLink = ({ variant, text, href }: Props): ReactElement => {
+const ButtonLink = ({ variant, href, children }: Props): ReactElement => {
   return (
     <a
       className={`button-link button-link--${variant}`}
       href={href}
       target="_blank"
     >
-      {text}
+      {children}
     </a>
   );
 };

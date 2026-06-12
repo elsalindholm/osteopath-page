@@ -1,0 +1,28 @@
+@use "./variables.scss" as *;
+
+.navbar-container {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  padding: 32px 32px;
+  background-color: $background--light;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $open-sans;
+}
+
+.nav-link-container {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.95px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
