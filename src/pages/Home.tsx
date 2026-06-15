@@ -17,7 +17,7 @@ const Home = (): ReactElement => {
           Hellävaraista, ihmislähtöistä, näyttöön perustuvaa osteopaattista
           hoitoa koko keholle — liiku vapaammin, voi paremmin ja elä täysillä.
         </BodyText>
-        <ButtonLink variant="dark" href="#">
+        <ButtonLink variant="dark" href="#varaa-aika">
           Varaa aika
         </ButtonLink>
       </div>

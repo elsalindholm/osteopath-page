@@ -2,5 +2,9 @@
 
 .reserve-time {
   background-color: $background--dark;
-  padding: 40px;
+  padding: 50px;
+  scroll-margin-top: 60px;
+  .button-container {
+    margin-top: 50px;
+  }
 }

@@ -2,7 +2,7 @@ import "../assets/scss/button-link.scss";
 import type { ComponentProps, ReactElement } from "react";
 
 type Props = {
-  variant: "dark";
+  variant: "dark" | "medium";
   href: string;
 } & ComponentProps<"a">;
 

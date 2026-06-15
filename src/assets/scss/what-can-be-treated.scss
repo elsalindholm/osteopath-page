@@ -2,5 +2,13 @@
 
 .what-can-be-treated {
   background-color: $background--medium;
-  padding: 40px;
+  padding: 50px;
+  scroll-margin-top: 60px;
+
+  .list-container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 }

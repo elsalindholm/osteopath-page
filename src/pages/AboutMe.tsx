@@ -6,7 +6,7 @@ import BodyText from "../components/BodyText";
 
 const AboutMe = (): ReactElement => {
   return (
-    <div className="about-me">
+    <div id="minusta" className="about-me">
       <div className="flex-row">
         <div className="column"></div>
         <div className="column">

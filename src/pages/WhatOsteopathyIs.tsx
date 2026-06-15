@@ -7,7 +7,7 @@ import NoteCard from "../components/NoteCard";
 
 const WhatOsteopathyIs = (): ReactElement => {
   return (
-    <div className="what-osteopathy-is">
+    <div id="osteopatia" className="what-osteopathy-is">
       <SectionName bgVariant="dark" text="Mitä osteopatia on" />
       <SectionHeading
         bgVariant="dark"

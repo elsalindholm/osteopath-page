@@ -6,11 +6,18 @@
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.85px;
-  box-shadow: 5px 5px 5px lightgrey;
   font-family: $open-sans;
+  display: block;
   &--dark {
     border: 1px solid $background--dark;
     background-color: $background--dark;
     color: $text--light-beige;
+    box-shadow: 5px 5px 5px lightgrey;
+  }
+  &--medium {
+    border: 1px solid #7a8c5c;
+    background-color: #7a8c5c;
+    color: $text--light-beige;
+    box-shadow: 5px 5px 5px #323232;
   }
 }

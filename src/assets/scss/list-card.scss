@@ -1,0 +1,32 @@
+@use "../scss/variables.scss" as *;
+
+.list-card {
+  background-color: #f2ebe0;
+  border: 2px solid #d4ccbc;
+  padding: 24px;
+  width: calc(50% - 8px);
+  .row {
+    display: flex;
+    align-items: flex-end;
+  }
+  .left-column {
+    width: 25%;
+  }
+  .right-column {
+    width: 75%;
+  }
+  .number {
+    font-family: $cormorant-garamond;
+    font-size: 50px;
+    color: #8a9c7a;
+    line-height: 1;
+  }
+  .title {
+    font-family: $open-sans;
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+  .description {
+    font-family: $open-sans;
+  }
+}

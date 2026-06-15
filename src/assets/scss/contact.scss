@@ -3,4 +3,25 @@
 .contact {
   background-color: $background--light;
   padding: 40px;
+  scroll-margin-top: 60px;
+
+  .contact-details-container {
+    margin-top: 50px;
+  }
+  dl {
+    margin-bottom: 32px;
+  }
+  dt {
+    text-transform: uppercase;
+    color: #3d4230;
+    font-family: $open-sans;
+    font-size: 20px;
+  }
+  dd {
+    margin-inline-start: 0;
+    color: #7a8c5c;
+    font-family: $open-sans;
+    font-size: 20px;
+    letter-spacing: 0.75px;
+  }
 }
