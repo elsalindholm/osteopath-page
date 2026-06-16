@@ -4,17 +4,22 @@
   width: 100%;
   height: 50px;
   position: fixed;
+  z-index: 10;
   padding: 32px 32px;
   background-color: $background--light;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-family: $open-sans;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 25%);
 }
 
 .nav-link-container {
   display: flex;
   gap: 16px;
+  @include breakpoint(mobile-only) {
+    display: none;
+  }
 }
 
 .nav-link {
@@ -24,5 +29,49 @@
   letter-spacing: 0.95px;
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.burger-menu-button {
+  display: none;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  @include breakpoint(mobile-only) {
+    display: block;
+  }
+}
+
+.mobile-nav-container {
+  display: none;
+  @include breakpoint(mobile-only) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $background--light;
+    padding: 16px 32px 32px;
+    gap: 16px;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 25%);
+  }
+}
+
+.burger-menu {
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  cursor: pointer;
+  display: flex;
+
+  span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 2px;
   }
 }
