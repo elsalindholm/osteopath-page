@@ -2,10 +2,12 @@
 
 .home {
   display: flex;
+  @include breakpoint(mobile-only) {
+    flex-direction: column;
+  }
 }
 
 .text-container {
-  width: 50%;
   padding: 100px 50px 50px 50px;
   background-color: $background--light;
   display: flex;
@@ -13,8 +15,7 @@
   gap: 20px;
 }
 
-.image-container {
-  width: 50%;
+.home__image-container {
   padding: 50px;
   background-color: $background--dark;
 }

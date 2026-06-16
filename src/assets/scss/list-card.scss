@@ -4,7 +4,11 @@
   background-color: #f2ebe0;
   border: 2px solid #d4ccbc;
   padding: 24px;
-  width: calc(50% - 8px);
+  width: 100%;
+  max-width: calc(50% - 8px);
+  @include breakpoint(tablet-only) {
+    max-width: 100%;
+  }
   .row {
     display: flex;
     align-items: flex-end;

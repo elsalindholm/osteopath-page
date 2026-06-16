@@ -7,41 +7,35 @@ import BodyText from "../components/BodyText";
 const AboutMe = (): ReactElement => {
   return (
     <div id="minusta" className="about-me">
-      <div className="flex-row">
-        <div className="column"></div>
-        <div className="column">
-          <SectionName bgVariant="light" text="Minusta" />
-          <SectionHeading
-            bgVariant="light"
-            nonItalics="Kokonaisvaltainen lähestymistapa
+      <SectionName bgVariant="light" text="Minusta" />
+      <SectionHeading
+        bgVariant="light"
+        nonItalics="Kokonaisvaltainen lähestymistapa
 "
-            italics="pysyvään helpotukseen"
-          />
-          <BodyText bgVariant="light">
-            Olen Elias, osteopaatti Helsingistä. Hakeuduin terveydenhuollon
-            alalle, koska loukkaannuttuani nuorena aikuisena, sain apua
-            taitavalta ja ihmislähtöiseltä kuntoutuksen alan ammattilaiselta,
-            mikä inspiroi minua pyrkimään samaan.
-          </BodyText>
-          <BodyText bgVariant="light">
-            Haluan työlläni auttaa asiakkaitani voimaan paremmin ja pyrin siihen
-            kokonaisvaltaisella ihmislähtöisellä lähestymistavalla. Pyrin
-            kohtaamaan asiakkaan omana itsenään, keskustelemaan sekä hoitamaan
-            kokonaisvaltaisesti ja monipuolisesti osteopaattisin keinoin.
-          </BodyText>
-          <BodyText bgVariant="light">
-            Hoidan mielelläni kaikkia ja olen erityisesti kiinnostunut
-            urheilijoiden toimintakyvyn tukemisesta.
-          </BodyText>
-          <BodyText bgVariant="light">
-            Tavoitteena urallani on tehdä yksityisen vastaanottotyön lisäksi
-            myös yhteistyötä urheilujoukkueiden ja -seurojen kanssa.
-            Intohimojani ovat urheilu, hyvinvointi, musiikki ja osteopatia.
-            Tällä hetkellä pelaan aktiivisesti muunmuassa tennistä sekä laulan
-            kuorossa.
-          </BodyText>
-        </div>
-      </div>
+        italics="pysyvään helpotukseen"
+      />
+      <BodyText bgVariant="light">
+        Olen Elias, osteopaatti Helsingistä. Hakeuduin terveydenhuollon alalle,
+        koska loukkaannuttuani nuorena aikuisena, sain apua taitavalta ja
+        ihmislähtöiseltä kuntoutuksen alan ammattilaiselta, mikä inspiroi minua
+        pyrkimään samaan.
+      </BodyText>
+      <BodyText bgVariant="light">
+        Haluan työlläni auttaa asiakkaitani voimaan paremmin ja pyrin siihen
+        kokonaisvaltaisella ihmislähtöisellä lähestymistavalla. Pyrin kohtaamaan
+        asiakkaan omana itsenään, keskustelemaan sekä hoitamaan
+        kokonaisvaltaisesti ja monipuolisesti osteopaattisin keinoin.
+      </BodyText>
+      <BodyText bgVariant="light">
+        Hoidan mielelläni kaikkia ja olen erityisesti kiinnostunut urheilijoiden
+        toimintakyvyn tukemisesta.
+      </BodyText>
+      <BodyText bgVariant="light">
+        Tavoitteena urallani on tehdä yksityisen vastaanottotyön lisäksi myös
+        yhteistyötä urheilujoukkueiden ja -seurojen kanssa. Intohimojani ovat
+        urheilu, hyvinvointi, musiikki ja osteopatia. Tällä hetkellä pelaan
+        aktiivisesti muunmuassa tennistä sekä laulan kuorossa.
+      </BodyText>
     </div>
   );
 };
