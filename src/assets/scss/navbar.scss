@@ -32,6 +32,33 @@
   }
 }
 
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown__button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  min-width: 220px;
+  background-color: $background--light;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 25%);
+  white-space: nowrap;
+}
+
 .burger-menu-button {
   display: none;
   padding: 12px;
@@ -56,6 +83,13 @@
     padding: 16px 32px 32px;
     gap: 16px;
     box-shadow: 0px 0px 15px rgb(0 0 0 / 25%);
+  }
+
+  .mobile-nav-container__sublinks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-left: 16px;
   }
 }
 
