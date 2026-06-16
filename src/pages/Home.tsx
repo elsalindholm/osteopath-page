@@ -22,11 +22,7 @@ const Home = (): ReactElement => {
             Varaa aika
           </ButtonLink>
         </div>
-        <div className="home__image-container column">
-          <div className="image-container">
-            <img src="images/home.png" />
-          </div>
-        </div>
+        <div className="home__image-container column" />
       </div>
     </div>
   );

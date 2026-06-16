@@ -8,7 +8,7 @@ const Contact = (): ReactElement => {
   return (
     <div id="yhteystiedot" className="contact">
       <div className="flex-row">
-        <div className="column">
+        <div className="text-container column">
           <SectionName bgVariant="light" text="YhteysTiedot" />
           <SectionHeading bgVariant="light" nonItalics="Ota yhteyttä" />
           <BodyText bgVariant="light">
@@ -27,9 +27,9 @@ const Contact = (): ReactElement => {
             </dl>
           </div>
         </div>
-        <div className="column">
+        <div className="contact__image-column column">
           <div className="image-container">
-            <img src="images/contact2.png" />
+            <div className="contact__image"></div>
           </div>
         </div>
       </div>
