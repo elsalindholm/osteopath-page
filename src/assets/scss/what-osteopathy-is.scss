@@ -4,6 +4,29 @@
   background-color: $background--dark;
   padding: 50px;
   scroll-margin-top: 60px;
+  h4 {
+    font-family: $cormorant-garamond;
+    font-size: 28px;
+    color: black;
+  }
+  &__text-box-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    @include breakpoint(tablet-only) {
+      flex-direction: column;
+    }
+  }
+  &__text-box {
+    width: 100%;
+    background-color: #cdd7c3;
+    border: 2px solid #7a8c5c;
+    padding: 32px;
+    box-shadow: 5px 5px 5px #3a3a3a;
+    h4 {
+      margin-top: 0;
+    }
+  }
 }
 
 .note-card-container {

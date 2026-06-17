@@ -17,6 +17,9 @@ body {
   display: flex;
   @include breakpoint(mobile-only) {
     flex-direction: column;
+    &.mobile-reverse {
+      flex-direction: column-reverse;
+    }
   }
 }
 

@@ -4,4 +4,42 @@
   background-color: $background--light;
   padding: 50px;
   scroll-margin-top: 60px;
+  &__image-column {
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    @include breakpoint(mobile-only) {
+      flex-direction: column-reverse;
+      margin-top: 50px;
+    }
+  }
+}
+
+.about-me__image-container {
+  height: 400px;
+  width: 100%;
+  background-image: url("/images/Elias1.jpg");
+  background-size: cover;
+  background-position: center;
+  @include breakpoint(mobile-only) {
+    width: 100%;
+  }
+}
+
+.info-box {
+  width: 100%;
+  background-color: #cdd7c3;
+  border: 2px solid #7a8c5c;
+  padding: 8px;
+  box-shadow: 5px 5px 5px #d3d3d3;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  li {
+    font-family: $open-sans;
+    color: $background--dark;
+  }
 }

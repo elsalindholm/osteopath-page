@@ -7,22 +7,24 @@ import ButtonLink from "../components/ButtonLink";
 const Home = (): ReactElement => {
   return (
     <div className="home">
-      <div className="flex-row">
-        <div className="text-container column">
+      <div className="filter"></div>
+      <div className="home__flex-row">
+        <div className="text-container">
           <SectionHeading
-            bgVariant="light"
+            bgVariant="dark"
             nonItalics="Tukemassa kehosi"
             italics="luonnollista tasapainoa"
           />
-          <BodyText bgVariant="light">
+          <BodyText bgVariant="dark">
             Hellävaraista, ihmislähtöistä, näyttöön perustuvaa osteopaattista
-            hoitoa koko keholle — liiku vapaammin, voi paremmin ja elä täysillä.
+            hoitoa koko keholle
           </BodyText>
-          <ButtonLink variant="dark" href="#varaa-aika">
-            Varaa aika
-          </ButtonLink>
+          <div className="button-container">
+            <ButtonLink variant="medium" href="#varaa-aika">
+              Varaa aika
+            </ButtonLink>
+          </div>
         </div>
-        <div className="home__image-container column" />
       </div>
     </div>
   );
