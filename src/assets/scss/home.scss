@@ -16,6 +16,11 @@
     flex-direction: column;
     z-index: 100;
     width: 50%;
+    @include breakpoint(desktop-up) {
+      padding-left: 150px;
+      padding-right: 150px;
+      width: 70%;
+    }
     @include breakpoint(tablet-only) {
       width: 75%;
     }

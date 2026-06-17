@@ -4,7 +4,10 @@
   background-color: $background--medium;
   padding: 50px;
   scroll-margin-top: 60px;
-
+  @include breakpoint(desktop-up) {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
   .list-container {
     margin-top: 40px;
     display: flex;

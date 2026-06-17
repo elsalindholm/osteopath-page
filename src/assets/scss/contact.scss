@@ -4,7 +4,6 @@
   background-color: $background--light;
   padding-bottom: 70px;
   scroll-margin-top: 60px;
-
   .contact-details-container {
     margin-top: 50px;
   }
@@ -26,6 +25,9 @@
   }
   .text-container {
     padding: 50px 50px 50px 50px;
+    @include breakpoint(desktop-up) {
+      padding-left: 150px;
+    }
     background-color: $background--light;
   }
 }
