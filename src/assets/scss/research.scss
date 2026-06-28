@@ -1,0 +1,21 @@
+@use "../scss/variables.scss" as *;
+
+.research {
+  position: relative;
+  padding: 114px 50px 50px 50px;
+  height: auto;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  background-color: $background--light;
+  @include breakpoint(desktop-up) {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+.research-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

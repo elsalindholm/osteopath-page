@@ -21,7 +21,7 @@
 .nav-link-container {
   display: flex;
   gap: 16px;
-  @include breakpoint(mobile-only) {
+  @include breakpoint(nav-break) {
     display: none;
   }
 }
@@ -31,6 +31,12 @@
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.95px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
   &:hover {
     text-decoration: underline;
   }
@@ -70,14 +76,14 @@
   border: none;
   outline: none;
   background: transparent;
-  @include breakpoint(mobile-only) {
+  @include breakpoint(nav-break) {
     display: block;
   }
 }
 
 .mobile-nav-container {
   display: none;
-  @include breakpoint(mobile-only) {
+  @include breakpoint(nav-break) {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -113,4 +119,28 @@
     background-color: black;
     border-radius: 2px;
   }
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logo-first-row {
+  padding: 0px 4px;
+  text-transform: uppercase;
+  color: $background--dark;
+}
+
+.logo-second-row {
+  padding: 0px 4px;
+  text-transform: uppercase;
+  background-color: $background--dark;
+  color: $text--light-beige;
 }

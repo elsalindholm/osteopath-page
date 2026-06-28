@@ -1,0 +1,16 @@
+@use "../scss/variables.scss" as *;
+
+.research-link {
+  h4 {
+    font-family: $cormorant-garamond;
+    font-size: 24px;
+    color: $background--dark;
+    margin-bottom: 0px;
+  }
+  p {
+    color: $text--medium-green;
+  }
+  a {
+    color: $background--dark;
+  }
+}

@@ -6,7 +6,7 @@ import ButtonLink from "../components/ButtonLink";
 
 const Home = (): ReactElement => {
   return (
-    <div className="home">
+    <div id="home" className="home">
       <div className="filter"></div>
       <div className="home__flex-row">
         <div className="text-container">
