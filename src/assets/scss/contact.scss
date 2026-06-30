@@ -12,13 +12,13 @@
   }
   dt {
     text-transform: uppercase;
-    color: #3d4230;
+    color: $background--dark;
     font-family: $open-sans;
     font-size: 16px;
   }
   dd {
     margin-inline-start: 0;
-    color: #7a8c5c;
+    color: $text--medium-green;
     font-family: $open-sans;
     font-size: 16px;
     letter-spacing: 0.75px;

@@ -34,10 +34,10 @@
 
 .info-box {
   width: 100%;
-  background-color: #cdd7c3;
-  border: 2px solid #7a8c5c;
+  background-color: $background--pale-green;
+  border: 2px solid $text--medium-green;
   padding: 8px;
-  box-shadow: 5px 5px 5px #d3d3d3;
+  box-shadow: $box-shadow--offset-light;
   ul {
     display: flex;
     flex-direction: column;

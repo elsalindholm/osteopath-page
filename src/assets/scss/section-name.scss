@@ -10,9 +10,9 @@
     color: $text--medium-green;
   }
   &--medium {
-    color: #3d4230;
+    color: $background--dark;
   }
   &--dark {
-    color: #a8b898;
+    color: $text--muted-green;
   }
 }

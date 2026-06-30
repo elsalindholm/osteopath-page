@@ -8,19 +8,19 @@
   &--light {
     color: black;
     .italics {
-      color: #7a8c5c;
+      color: $text--medium-green;
     }
   }
   &--medium {
     color: black;
     .italics {
-      color: #3d4230;
+      color: $background--dark;
     }
   }
   &--dark {
-    color: #ece9e5;
+    color: $background--light;
     .italics {
-      color: #a8b898;
+      color: $text--muted-green;
     }
   }
   .italics {
