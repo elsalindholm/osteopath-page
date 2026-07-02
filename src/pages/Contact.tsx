@@ -42,11 +42,11 @@ const Contact = ({ activeLanguage }: Props): ReactElement => {
           <div className="contact-details-container">
             <dl>
               <dt>{activeLanguage === "Suomi" ? "Puhelin" : "Mobile"}</dt>
-              <dd>050 383 0767</dd>
+              <dd><a href="tel:0503830767">050 383 0767</a></dd>
             </dl>
             <dl>
               <dt>{activeLanguage === "Suomi" ? "Sähköposti" : "Email"}</dt>
-              <dd>contact@osteopaattieliaslindholm.fi</dd>
+              <dd><a href="mailto:contact@osteopaattieliaslindholm.fi">contact@osteopaattieliaslindholm.fi</a></dd>
             </dl>
           </div>
         </div>

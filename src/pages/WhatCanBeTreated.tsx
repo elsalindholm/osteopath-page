@@ -48,7 +48,7 @@ const WhatCanBeTreated = ({ activeLanguage }: Props): ReactElement => {
       </BodyText>
       <div className="list-container">
         {treatmentListItems.map((item) => (
-          <ListCard number={item.number} title={item.title}>
+          <ListCard key={item.number} number={item.number} title={item.title}>
             {item.description}
           </ListCard>
         ))}

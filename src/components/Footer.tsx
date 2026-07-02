@@ -17,11 +17,11 @@ const Footer = ({ activeLanguage, setActiveLanguage }: Props): ReactElement => {
           <p className="footer__label">
             {activeLanguage === "Suomi" ? "Puhelin" : "Mobile"}
           </p>
-          <p className="footer__value">050 383 0767</p>
+          <p className="footer__value"><a href="tel:0503830767">050 383 0767</a></p>
           <p className="footer__label">
             {activeLanguage === "Suomi" ? "Sähköposti" : "Email"}
           </p>
-          <p className="footer__value">contact@osteopaattieliaslindholm.fi</p>
+          <p className="footer__value"><a href="mailto:contact@osteopaattieliaslindholm.fi">contact@osteopaattieliaslindholm.fi</a></p>
           <div className="footer__language">
             <label className="sr-only" htmlFor="language-toggle">
               Vaihda kieli / toggle language

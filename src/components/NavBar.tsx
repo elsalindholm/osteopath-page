@@ -30,15 +30,18 @@ const osteopatiaLinksEng: NavLink[] = [
 interface NavBarProps {
   navigate: (page: Page, section?: string) => void;
   activeLanguage: Language;
+  activePage: Page;
 }
 
 const NavBar = ({
   navigate,
   activeLanguage,
+  activePage,
 }: NavBarProps) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [osteopatiaOpen, setOsteopatiaOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const dropdownButtonRef = useRef<HTMLButtonElement>(null);
   const osteopatiaLinks =
     activeLanguage === "Suomi" ? osteopatiaLinksFin : osteopatiaLinksEng;
 
@@ -64,19 +67,32 @@ const NavBar = ({
         <BrandLogo variant="light" />
       </button>
       <div className="nav-link-container">
-        <div className="nav-dropdown" ref={dropdownRef}>
+        <div
+          className="nav-dropdown"
+          ref={dropdownRef}
+          onKeyDown={(e) => {
+            if (e.key === "Escape" && osteopatiaOpen) {
+              setOsteopatiaOpen(false);
+              dropdownButtonRef.current?.focus();
+            }
+          }}
+        >
           <button
+            ref={dropdownButtonRef}
             className="nav-link nav-dropdown__button"
+            aria-expanded={osteopatiaOpen}
+            aria-controls="osteopatia-dropdown"
             onClick={() => setOsteopatiaOpen(!osteopatiaOpen)}
           >
             {activeLanguage === "Suomi" ? "Osteopatia" : "Osteopathy"}
           </button>
           {osteopatiaOpen && (
-            <div className="nav-dropdown__menu">
+            <div id="osteopatia-dropdown" className="nav-dropdown__menu">
               {osteopatiaLinks.map(({ page, section, label }) => (
                 <button
                   key={label}
                   className="nav-link"
+                  aria-current={page === activePage && !section ? "page" : undefined}
                   onClick={() => {
                     navigate(page, section);
                     setOsteopatiaOpen(false);
@@ -109,6 +125,9 @@ const NavBar = ({
       </div>
       <button
         className="burger-menu-button"
+        aria-label={activeLanguage === "Suomi" ? "Avaa valikko" : "Open menu"}
+        aria-expanded={mobileNavOpen}
+        aria-controls="mobile-nav"
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
       >
         <div className="burger-menu">
@@ -118,7 +137,7 @@ const NavBar = ({
         </div>
       </button>
       {mobileNavOpen && (
-        <div className="mobile-nav-container">
+        <div id="mobile-nav" className="mobile-nav-container">
           <button
             className="nav-link"
             onClick={() => {
@@ -129,7 +148,7 @@ const NavBar = ({
             {activeLanguage === "Suomi" ? "Osteopatia" : "Osteopathy"}
           </button>
           <div className="mobile-nav-container__sublinks">
-            {osteopatiaLinksFin.map(({ page, section, label }) => (
+            {osteopatiaLinks.map(({ page, section, label }) => (
               <button
                 key={label}
                 className="nav-link"

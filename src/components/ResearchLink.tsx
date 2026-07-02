@@ -11,9 +11,11 @@ type Props = {
 const ResearchLink = ({ title, authors, href }: Props): ReactElement => {
   return (
     <div className="research-link">
-      <a href={href} target="_blank">
-        <h4>{title}</h4>
-      </a>
+      <h4>
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          {title}
+        </a>
+      </h4>
       <BodyText bgVariant="light">{authors}</BodyText>
     </div>
   );
