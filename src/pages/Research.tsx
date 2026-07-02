@@ -2,19 +2,27 @@ import "../assets/scss/research.scss";
 import ResearchLink from "../components/ResearchLink";
 import SectionHeading from "../components/SectionHeading";
 import SectionName from "../components/SectionName";
+import type { Language } from "../App";
 
-const Research = () => {
+interface Props {
+  activeLanguage: Language;
+}
+
+const Research = ({ activeLanguage }: Props) => {
   return (
     <div className="research">
-      <SectionName bgVariant="light" text="Linkkejä tutkimuksiin" />
+      <SectionName
+        bgVariant="light"
+        text={activeLanguage === "Suomi" ? "Linkkejä tutkimuksiin" : ""}
+      />
       <SectionHeading
         bgVariant="light"
-        nonItalics="Osteopatiaan liittyviä"
-        italics="tutkimuksia"
+        nonItalics={activeLanguage === "Suomi" ? "Osteopatiaan liittyviä" : ""}
+        italics={activeLanguage === "Suomi" ? "tutkimuksia" : ""}
       />
       <div className="research-list">
         <ResearchLink
-          title="(2025) Osteopathic approach to injuries of the overhead thrower’s shoulder. Journal of Osteopathic Medicine, Vol. 125 (Issue 6), pp. 285-298."
+          title="(2025) Osteopathic approach to injuries of the overhead thrower's shoulder. Journal of Osteopathic Medicine, Vol. 125 (Issue 6), pp. 285-298."
           authors="De Luigi, A., Raum, G., King, B. and Bowers, R."
           href="https://doi.org/10.1515/jom-2024-0031"
         />
@@ -44,12 +52,12 @@ const Research = () => {
           href="https://doi.org/10.1111/j.1526-4610.2006.00535.x"
         />
         <ResearchLink
-          title="(2024) Elite track and field athletes’ perspective and experiences of osteopathic treatments: A descriptive phenomenological study. Journal of Bodywork and Movement Therapies, Vol. 40, 2105-2112."
+          title="(2024) Elite track and field athletes' perspective and experiences of osteopathic treatments: A descriptive phenomenological study. Journal of Bodywork and Movement Therapies, Vol. 40, 2105-2112."
           authors="Cella, M., Consorti, G., Odorisio, L. and Fard, R."
           href="https://doi.org/10.1016/j.jbmt.2024.10.039"
         />
         <ResearchLink
-          title="(2025) Osteopaths’ perspective and experiences of elite track and field athletes osteopathic treatments: A descriptive phenomenological study. Journal of Bodywork and Movement Therapies, Volume 42, Pages 596-605."
+          title="(2025) Osteopaths' perspective and experiences of elite track and field athletes osteopathic treatments: A descriptive phenomenological study. Journal of Bodywork and Movement Therapies, Volume 42, Pages 596-605."
           authors="Consorti, G., Fard, R., Odorisio, L. and Cella, M."
           href="https://doi.org/10.1016/j.jbmt.2025.01.017"
         />

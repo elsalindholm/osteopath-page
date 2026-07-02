@@ -3,26 +3,49 @@ import SectionHeading from "../components/SectionHeading";
 import SectionName from "../components/SectionName";
 import "../assets/scss/contact.scss";
 import BodyText from "../components/BodyText";
+import type { Language } from "../App";
 
-const Contact = (): ReactElement => {
+interface Props {
+  activeLanguage: Language;
+}
+
+const Contact = ({ activeLanguage }: Props): ReactElement => {
   return (
     <div id="yhteystiedot" className="contact">
       <div className="flex-row">
         <div className="text-container column">
-          <SectionName bgVariant="light" text="YhteysTiedot" />
-          <SectionHeading bgVariant="light" nonItalics="Ota yhteyttä" />
-          <BodyText bgVariant="light">
-            Onko sinulla kysymyksiä hoitoihin liittyen? Tai ehkäpä
-            urheiluseurasi tai organisaatiosi on kiinnostunut tekemään
-            yhteistyötä kanssani.
-          </BodyText>
+          <SectionName
+            bgVariant="light"
+            text={
+              activeLanguage === "Suomi" ? "YhteysTiedot" : "Contact details"
+            }
+          />
+          <SectionHeading
+            bgVariant="light"
+            nonItalics={
+              activeLanguage === "Suomi" ? "Ota yhteyttä" : "Get in touch"
+            }
+          />
+          {activeLanguage === "Suomi" && (
+            <BodyText bgVariant="light">
+              Onko sinulla kysymyksiä hoitoihin liittyen? Tai ehkäpä
+              urheiluseurasi tai organisaatiosi on kiinnostunut tekemään
+              yhteistyötä kanssani.
+            </BodyText>
+          )}
+          {activeLanguage === "English" && (
+            <BodyText bgVariant="light">
+              Do you have questions regarding osteopathic treatments? Or is your
+              organisation or sports team perhaps interested in working with me?
+            </BodyText>
+          )}
           <div className="contact-details-container">
             <dl>
-              <dt>Puhelin</dt>
+              <dt>{activeLanguage === "Suomi" ? "Puhelin" : "Mobile"}</dt>
               <dd>050 383 0767</dd>
             </dl>
             <dl>
-              <dt>Sähköposti</dt>
+              <dt>{activeLanguage === "Suomi" ? "Sähköposti" : "Email"}</dt>
               <dd>contact@osteopaattieliaslindholm.fi</dd>
             </dl>
           </div>

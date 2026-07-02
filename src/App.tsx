@@ -15,8 +15,16 @@ const Pages: Record<string, Page> = {
   Research: "Research",
 };
 
+const Languages = {
+  Finnish: "Suomi",
+  English: "English",
+} as const;
+
+export type Language = (typeof Languages)[keyof typeof Languages];
+
 function App() {
   const [activePage, setActivePage] = useState<Page>(Pages.Main);
+  const [activeLanguage, setActiveLanguage] = useState(Languages.Finnish);
 
   const navigate = (page: Page, section?: string) => {
     setActivePage(page);
@@ -30,18 +38,24 @@ function App() {
   };
   return (
     <div className="app">
-      <NavBar navigate={navigate} />
+      <NavBar
+        navigate={navigate}
+        activeLanguage={activeLanguage}
+        setActiveLanguage={setActiveLanguage}
+      />
       {activePage == Pages.Main && (
         <div>
-          <Home />
-          <WhatOsteopathyIs />
-          <WhatCanBeTreated />
-          <AboutMe />
-          <ReserveTime />
-          <Contact />
+          <Home activeLanguage={activeLanguage} />
+          <WhatOsteopathyIs activeLanguage={activeLanguage} />
+          <WhatCanBeTreated activeLanguage={activeLanguage} />
+          <AboutMe activeLanguage={activeLanguage} />
+          <ReserveTime activeLanguage={activeLanguage} />
+          <Contact activeLanguage={activeLanguage} />
         </div>
       )}
-      {activePage == Pages.Research && <Research />}
+      {activePage == Pages.Research && (
+        <Research activeLanguage={activeLanguage} />
+      )}
     </div>
   );
 }

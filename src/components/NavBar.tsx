@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "../assets/scss/navbar.scss";
+import type { Language } from "../App";
 
 export type Page = "Main" | "Research";
 
@@ -9,20 +10,38 @@ interface NavLink {
   label: string;
 }
 
-const osteopatiaLinks: NavLink[] = [
+const osteopatiaLinksFin: NavLink[] = [
   { page: "Main", section: "#osteopatia", label: "Mitä osteopatia on" },
   { page: "Main", section: "#hoito", label: "Mitä osteopatialla voi hoitaa" },
   { page: "Research", label: "Linkkejä tutkimuksiin" },
 ];
 
+const osteopatiaLinksEng: NavLink[] = [
+  { page: "Main", section: "#osteopatia", label: "What is osteopathy" },
+  {
+    page: "Main",
+    section: "#hoito",
+    label: "What can be treated with osteopathy",
+  },
+  { page: "Research", label: "Links to research" },
+];
+
 interface NavBarProps {
   navigate: (page: Page, section?: string) => void;
+  activeLanguage: Language;
+  setActiveLanguage: (lang: Language) => void;
 }
 
-const NavBar = ({ navigate }: NavBarProps) => {
+const NavBar = ({
+  navigate,
+  activeLanguage,
+  setActiveLanguage,
+}: NavBarProps) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [osteopatiaOpen, setOsteopatiaOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const osteopatiaLinks =
+    activeLanguage === "Suomi" ? osteopatiaLinksFin : osteopatiaLinksEng;
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -39,7 +58,10 @@ const NavBar = ({ navigate }: NavBarProps) => {
 
   return (
     <div className="navbar-container">
-      <button className="logo-container" onClick={() => navigate("Main", "#home")}>
+      <button
+        className="logo-container"
+        onClick={() => navigate("Main", "#home")}
+      >
         <div className="logo-first-row">Osteopaatti</div>
         <div className="logo-second-row">Elias Lindholm</div>
       </button>
@@ -49,7 +71,7 @@ const NavBar = ({ navigate }: NavBarProps) => {
             className="nav-link nav-dropdown__button"
             onClick={() => setOsteopatiaOpen(!osteopatiaOpen)}
           >
-            Osteopatia
+            {activeLanguage === "Suomi" ? "Osteopatia" : "Osteopathy"}
           </button>
           {osteopatiaOpen && (
             <div className="nav-dropdown__menu">
@@ -72,20 +94,33 @@ const NavBar = ({ navigate }: NavBarProps) => {
           className="nav-link"
           onClick={() => navigate("Main", "#minusta")}
         >
-          Minusta
+          {activeLanguage === "Suomi" ? "Minusta" : "About me"}
         </button>
         <button
           className="nav-link"
           onClick={() => navigate("Main", "#varaa-aika")}
         >
-          Varaa aika
+          {activeLanguage === "Suomi" ? "Varaa aika" : "Appointments"}
         </button>
         <button
           className="nav-link"
           onClick={() => navigate("Main", "#yhteystiedot")}
         >
-          Yhteystiedot
+          {activeLanguage === "Suomi" ? "Yhteystiedot" : "Contact"}
         </button>
+        <div>
+          <label className="sr-only" htmlFor="language-toggle">
+            Vaihda kieli / toggle language
+          </label>
+          <select
+            id="language-toggle"
+            value={activeLanguage}
+            onChange={(e) => setActiveLanguage(e.target.value as Language)}
+          >
+            <option value="Suomi">FI</option>
+            <option value="English">EN</option>
+          </select>
+        </div>
       </div>
       <button
         className="burger-menu-button"
@@ -106,10 +141,10 @@ const NavBar = ({ navigate }: NavBarProps) => {
               setMobileNavOpen(false);
             }}
           >
-            Osteopatia
+            {activeLanguage === "Suomi" ? "Osteopatia" : "Osteopathy"}
           </button>
           <div className="mobile-nav-container__sublinks">
-            {osteopatiaLinks.map(({ page, section, label }) => (
+            {osteopatiaLinksFin.map(({ page, section, label }) => (
               <button
                 key={label}
                 className="nav-link"
@@ -129,7 +164,7 @@ const NavBar = ({ navigate }: NavBarProps) => {
               setMobileNavOpen(false);
             }}
           >
-            Minusta
+            {activeLanguage === "Suomi" ? "Minusta" : "About me"}
           </button>
           <button
             className="nav-link"
@@ -138,7 +173,7 @@ const NavBar = ({ navigate }: NavBarProps) => {
               setMobileNavOpen(false);
             }}
           >
-            Varaa aika
+            {activeLanguage === "Suomi" ? "Varaa aika" : "Appointments"}
           </button>
           <button
             className="nav-link"
@@ -147,8 +182,21 @@ const NavBar = ({ navigate }: NavBarProps) => {
               setMobileNavOpen(false);
             }}
           >
-            Yhteystiedot
+            {activeLanguage === "Suomi" ? "Yhteystiedot" : "Contact"}
           </button>
+          <div>
+            <label className="sr-only" htmlFor="language-toggle">
+              Vaihda kieli / toggle language
+            </label>
+            <select
+              id="language-toggle"
+              value={activeLanguage}
+              onChange={(e) => setActiveLanguage(e.target.value as Language)}
+            >
+              <option value="Suomi">FI</option>
+              <option value="English">EN</option>
+            </select>
+          </div>
         </div>
       )}
     </div>
