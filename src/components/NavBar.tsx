@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "../assets/scss/navbar.scss";
 import type { Language } from "../App";
+import BrandLogo from "./BrandLogo";
 
 export type Page = "Main" | "Research";
 
@@ -29,13 +30,11 @@ const osteopatiaLinksEng: NavLink[] = [
 interface NavBarProps {
   navigate: (page: Page, section?: string) => void;
   activeLanguage: Language;
-  setActiveLanguage: (lang: Language) => void;
 }
 
 const NavBar = ({
   navigate,
   activeLanguage,
-  setActiveLanguage,
 }: NavBarProps) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [osteopatiaOpen, setOsteopatiaOpen] = useState(false);
@@ -62,8 +61,7 @@ const NavBar = ({
         className="logo-container"
         onClick={() => navigate("Main", "#home")}
       >
-        <div className="logo-first-row">Osteopaatti</div>
-        <div className="logo-second-row">Elias Lindholm</div>
+        <BrandLogo variant="light" />
       </button>
       <div className="nav-link-container">
         <div className="nav-dropdown" ref={dropdownRef}>
@@ -108,19 +106,6 @@ const NavBar = ({
         >
           {activeLanguage === "Suomi" ? "Yhteystiedot" : "Contact"}
         </button>
-        <div>
-          <label className="sr-only" htmlFor="language-toggle">
-            Vaihda kieli / toggle language
-          </label>
-          <select
-            id="language-toggle"
-            value={activeLanguage}
-            onChange={(e) => setActiveLanguage(e.target.value as Language)}
-          >
-            <option value="Suomi">FI</option>
-            <option value="English">EN</option>
-          </select>
-        </div>
       </div>
       <button
         className="burger-menu-button"
@@ -184,19 +169,6 @@ const NavBar = ({
           >
             {activeLanguage === "Suomi" ? "Yhteystiedot" : "Contact"}
           </button>
-          <div>
-            <label className="sr-only" htmlFor="language-toggle">
-              Vaihda kieli / toggle language
-            </label>
-            <select
-              id="language-toggle"
-              value={activeLanguage}
-              onChange={(e) => setActiveLanguage(e.target.value as Language)}
-            >
-              <option value="Suomi">FI</option>
-              <option value="English">EN</option>
-            </select>
-          </div>
         </div>
       )}
     </div>

@@ -13,12 +13,18 @@ const Research = ({ activeLanguage }: Props) => {
     <div className="research">
       <SectionName
         bgVariant="light"
-        text={activeLanguage === "Suomi" ? "Linkkejä tutkimuksiin" : ""}
+        text={
+          activeLanguage === "Suomi"
+            ? "Linkkejä tutkimuksiin"
+            : "Links to research"
+        }
       />
       <SectionHeading
         bgVariant="light"
-        nonItalics={activeLanguage === "Suomi" ? "Osteopatiaan liittyviä" : ""}
-        italics={activeLanguage === "Suomi" ? "tutkimuksia" : ""}
+        nonItalics={
+          activeLanguage === "Suomi" ? "Osteopatiaan liittyviä" : "Osteopathy"
+        }
+        italics={activeLanguage === "Suomi" ? "tutkimuksia" : "in academia"}
       />
       <div className="research-list">
         <ResearchLink

@@ -7,6 +7,7 @@ import WhatOsteopathyIs from "./pages/WhatOsteopathyIs";
 import Home from "./pages/Home";
 import NavBar from "./components/NavBar";
 import type { Page } from "./components/NavBar";
+import Footer from "./components/Footer";
 import { useState } from "react";
 import Research from "./pages/Research";
 
@@ -41,7 +42,6 @@ function App() {
       <NavBar
         navigate={navigate}
         activeLanguage={activeLanguage}
-        setActiveLanguage={setActiveLanguage}
       />
       {activePage == Pages.Main && (
         <div>
@@ -56,6 +56,7 @@ function App() {
       {activePage == Pages.Research && (
         <Research activeLanguage={activeLanguage} />
       )}
+      <Footer activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />
     </div>
   );
 }
