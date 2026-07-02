@@ -45,9 +45,17 @@
 
 .footer__value {
   margin: 0;
-  font-size: 14px;
-  letter-spacing: 0.75px;
-  color: $text--light-beige;
+  a {
+    font-size: 14px;
+    letter-spacing: 0.75px;
+    color: $text--light-beige;
+    text-decoration: none;
+    &:hover,
+    &:visited,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
 }
 
 .footer__language {

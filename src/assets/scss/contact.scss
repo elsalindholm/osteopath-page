@@ -17,10 +17,18 @@
   }
   dd {
     margin-inline-start: 0;
+  }
+  dd > a {
     color: $text--medium-green;
     font-family: $open-sans;
     font-size: 16px;
     letter-spacing: 0.75px;
+    text-decoration: none;
+    &:hover,
+    &:visited,
+    &:focus {
+      text-decoration: underline;
+    }
   }
   .text-container {
     padding: 50px 50px 50px 50px;
