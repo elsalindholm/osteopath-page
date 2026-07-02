@@ -4,6 +4,7 @@ import SectionHeading from "../components/SectionHeading";
 import BodyText from "../components/BodyText";
 import ButtonLink from "../components/ButtonLink";
 import type { Language } from "../App";
+import SectionName from "../components/SectionName";
 
 interface Props {
   activeLanguage: Language;
@@ -15,6 +16,14 @@ const Home = ({ activeLanguage }: Props): ReactElement => {
       <div className="filter"></div>
       <div className="home__flex-row">
         <div className="text-container">
+          <SectionName
+            bgVariant="dark"
+            text={
+              activeLanguage === "Suomi"
+                ? "Rekisteröity osteopaatti · pääkaupunkiseutu"
+                : "Registered osteopath · Greater helsinki"
+            }
+          ></SectionName>
           <SectionHeading
             bgVariant="dark"
             nonItalics={

@@ -12,19 +12,7 @@
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease;
-  &--dark {
-    border: 1px solid $background--dark;
-    background-color: $background--dark;
-    color: $text--light-beige;
-    box-shadow: $box-shadow--offset-light;
-    &:hover {
-      background-color: color.adjust($background--dark, $lightness: -8%);
-    }
-    &:active {
-      transform: translateY(1px);
-    }
-  }
-  &--medium {
+&--medium {
     border: 1px solid $text--medium-green;
     background-color: $text--medium-green;
     color: $text--light-beige;
