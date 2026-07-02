@@ -24,7 +24,7 @@ export type Language = (typeof Languages)[keyof typeof Languages];
 
 function App() {
   const [activePage, setActivePage] = useState<Page>(Pages.Main);
-  const [activeLanguage, setActiveLanguage] = useState(Languages.Finnish);
+  const [activeLanguage, setActiveLanguage] = useState<Language>(Languages.Finnish);
 
   const navigate = (page: Page, section?: string) => {
     setActivePage(page);
