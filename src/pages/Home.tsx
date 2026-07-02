@@ -40,7 +40,7 @@ const Home = ({ activeLanguage }: Props): ReactElement => {
           <BodyText bgVariant="dark">
             {activeLanguage === "Suomi"
               ? "Hellävaraista, ihmislähtöistä, näyttöön perustuvaa osteopaattista hoitoa koko keholle."
-              : "Client-based osteopathic treatment based on research."}
+              : "Client-focused osteopathic treatment based on research."}
           </BodyText>
           <div className="button-container">
             <ButtonLink variant="medium" href="#varaa-aika">

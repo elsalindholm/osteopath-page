@@ -56,22 +56,22 @@ const AboutMe = ({ activeLanguage }: Props): ReactElement => {
           <BodyText bgVariant="light">
             {activeLanguage === "Suomi"
               ? "Olen Elias, osteopaatti Helsingistä. Hakeuduin terveydenhuollon alalle, koska loukkaannuttuani nuorena aikuisena, sain apua taitavalta ja ihmislähtöiseltä kuntoutuksen alan ammattilaiselta, mikä inspiroi minua pyrkimään samaan."
-              : "I’m Elias, an osteopath from Helsinki. I ended up in the healthcare business because of an injury I had as a young adult. The manual therapist who helped me recover acted with such professionalism and made me feel seen in a way I wish to pass on to others. "}
+              : "I’m Elias, an osteopath from Helsinki. My passion for osteopathy and general wellbeing began when I was seeking treatment for an injury I had as a young adult. The manual therapist who helped me recover acted with professionalism and made me feel seen in a way I wish to pass on to others. "}
           </BodyText>
           <BodyText bgVariant="light">
             {activeLanguage === "Suomi"
               ? "Haluan työlläni auttaa asiakkaitani voimaan paremmin ja pyrin siihen kokonaisvaltaisella ihmislähtöisellä lähestymistavalla. Pyrin kohtaamaan asiakkaan omana itsenään, keskustelemaan sekä hoitamaan kokonaisvaltaisesti ja monipuolisesti osteopaattisin keinoin."
-              : "My goal is to help my clients feel better which I do by treating the body as a whole and by tailoring to the individual needs of the client. I treat all kinds of people and I’m especially interested in treating athletes and musicians. "}
+              : "My goal is to help my clients feel better. I achieve this by treating the body as a whole and by tailoring treatments to the individual needs of the client. "}
           </BodyText>
           <BodyText bgVariant="light">
             {activeLanguage === "Suomi"
               ? "Hoidan mielelläni kaikkia ja olen erityisesti kiinnostunut urheilijoiden toimintakyvyn tukemisesta."
-              : ""}
+              : "I treat people of various backgrounds and I’m especially interested in treating athletes and musicians."}
           </BodyText>
           <BodyText bgVariant="light">
             {activeLanguage === "Suomi"
               ? "Tavoitteena urallani on tehdä yksityisen vastaanottotyön lisäksi myös yhteistyötä urheilujoukkueiden ja -seurojen kanssa. Intohimojani ovat urheilu, hyvinvointi, musiikki ja osteopatia. Tällä hetkellä pelaan aktiivisesti muunmuassa tennistä sekä laulan kuorossa."
-              : "My career goal is to also work with sports teams and organisations. My passions are sports, well-being, music and osteopathy. At the moment I play lots of tennis and sing in a choir."}
+              : "One of my career goals is to work with sports teams and organisations. My passions are sports, wellbeing, music and osteopathy. At the moment I play lots of tennis and sing in a choir."}
           </BodyText>
         </div>
       </div>

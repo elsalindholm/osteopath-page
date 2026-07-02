@@ -22,7 +22,7 @@ const osteopatiaLinksEng: NavLink[] = [
   {
     page: "Main",
     section: "#hoito",
-    label: "What can be treated with osteopathy",
+    label: "Osteopathic treatment",
   },
   { page: "Research", label: "Links to research" },
 ];
@@ -33,11 +33,7 @@ interface NavBarProps {
   activePage: Page;
 }
 
-const NavBar = ({
-  navigate,
-  activeLanguage,
-  activePage,
-}: NavBarProps) => {
+const NavBar = ({ navigate, activeLanguage, activePage }: NavBarProps) => {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [osteopatiaOpen, setOsteopatiaOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -92,7 +88,9 @@ const NavBar = ({
                 <button
                   key={label}
                   className="nav-link"
-                  aria-current={page === activePage && !section ? "page" : undefined}
+                  aria-current={
+                    page === activePage && !section ? "page" : undefined
+                  }
                   onClick={() => {
                     navigate(page, section);
                     setOsteopatiaOpen(false);

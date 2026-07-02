@@ -25,7 +25,7 @@ const WhatCanBeTreated = ({ activeLanguage }: Props): ReactElement => {
         text={
           activeLanguage === "Suomi"
             ? "Mitä osteopatialla voi hoitaa"
-            : "What can be treated with osteopathy"
+            : "Osteopathic treatment"
         }
       />
       <SectionHeading
@@ -33,18 +33,18 @@ const WhatCanBeTreated = ({ activeLanguage }: Props): ReactElement => {
         nonItalics={
           activeLanguage === "Suomi"
             ? "Tavoitteena edistää"
-            : "The aim to promote "
+            : "Aims to promote "
         }
         italics={
           activeLanguage === "Suomi"
             ? "hyvinvointia ja toimintakykyä"
-            : "well-being and functional capacity"
+            : "wellbeing and functional capacity"
         }
       />
       <BodyText bgVariant="light">
         {activeLanguage === "Suomi"
           ? "Osteopatiasta on tutkitusti hyötyä moniin erilaisiin tuki- ja liikuntaelimistön kipuihin ja liikerajoituksiin. Alla muutamia yleisimpiä syitä osteopaatille hakeutumiselle."
-          : "Research has proven osteopathy to be helpful in many different cases of musculoskeletal pain or restriction of movement. Below you can find some of the most usual reasons for osteopathic treatment."}
+          : "Research has proven osteopathy to be helpful in many different cases of musculoskeletal pain or restriction of movement. Below you can find common reasons for seeking osteopathic treatment."}
       </BodyText>
       <div className="list-container">
         {treatmentListItems.map((item) => (

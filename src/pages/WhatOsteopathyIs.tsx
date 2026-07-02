@@ -34,7 +34,7 @@ const WhatOsteopathyIs = ({ activeLanguage }: Props): ReactElement => {
       <BodyText bgVariant="dark">
         {activeLanguage === "Suomi"
           ? "Osteopatia on käsin toteutettava hoitomuoto, jossa tavoitteena on asiakkaan toimintakyvyn sekä hyvinvoinnin edistäminen. Osteopaattisessa hoidossa eri elinjärjestelmiä sekä kudoksia käsitellään asiakaskohtaisten tarpeiden mukaisesti. Osteopatia on vanhin länsimainen manuaalinen hoitomuoto ja sitä on opetettu Suomessa ammattikorkeakoulussa vuodesta 2000 asti."
-          : "Osteopathy is a hands-on form of therapy aimed at promoting the client’s functional capacity and overall well-being. In osteopathic treatment, different systems and tissues are addressed according to the client’s individual needs. Osteopathy is the oldest Western manual therapy, and it has been taught in Finnish universities of applied sciences since the year 2000."}
+          : "Osteopathy is a hands-on form of therapy aimed at promoting the client’s functional capacity and overall wellbeing. In osteopathic treatment, different systems and tissues are addressed according to the client’s individual needs. Osteopathy is the oldest Western manual therapy, and it has been taught in Finnish universities of applied sciences since the year 2000."}
       </BodyText>
       <div className="what-osteopathy-is__text-box-container">
         <div className="what-osteopathy-is__text-box">
