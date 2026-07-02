@@ -1,8 +1,9 @@
 @use "./variables.scss" as *;
 
 .brand-logo {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
+  align-self: flex-start;
   font-size: 14px;
 
   &__top,
