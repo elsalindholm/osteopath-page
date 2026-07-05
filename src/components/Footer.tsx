@@ -17,11 +17,17 @@ const Footer = ({ activeLanguage, setActiveLanguage }: Props): ReactElement => {
           <p className="footer__label">
             {activeLanguage === "Suomi" ? "Puhelin" : "Mobile"}
           </p>
-          <p className="footer__value"><a href="tel:0503830767">050 383 0767</a></p>
+          <p className="footer__value">
+            <a href="tel:0503830767">050 383 0767</a>
+          </p>
           <p className="footer__label">
             {activeLanguage === "Suomi" ? "Sähköposti" : "Email"}
           </p>
-          <p className="footer__value"><a href="mailto:contact@osteopaattieliaslindholm.fi">contact@osteopaattieliaslindholm.fi</a></p>
+          <p className="footer__value">
+            <a href="mailto:elias.lindholm@osteoelias.fi">
+              elias.lindholm@osteoelias.fi
+            </a>
+          </p>
           <div className="footer__language">
             <label className="sr-only" htmlFor="language-toggle">
               Vaihda kieli / toggle language
@@ -38,9 +44,7 @@ const Footer = ({ activeLanguage, setActiveLanguage }: Props): ReactElement => {
           </div>
         </div>
       </div>
-      <p className="footer__copyright">
-        &copy; {new Date().getFullYear()} Elias Lindholm
-      </p>
+      <p className="footer__copyright">&copy; 2026 Elias Lindholm</p>
     </footer>
   );
 };
