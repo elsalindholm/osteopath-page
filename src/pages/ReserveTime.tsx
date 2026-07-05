@@ -19,26 +19,30 @@ const ReserveTime = ({ activeLanguage }: Props): ReactElement => {
       />
       <SectionHeading
         bgVariant="dark"
-        nonItalics={activeLanguage === "Suomi" ? "Valmis voimaan" : "Ready to"}
-        italics={activeLanguage === "Suomi" ? "paremmin?" : "feel better?"}
+        nonItalics={
+          activeLanguage === "Suomi" ? "Kiinnostuitko" : "Interested in"
+        }
+        italics={
+          activeLanguage === "Suomi"
+            ? "osteopaattisesta hoidosta?"
+            : "osteopathic care?"
+        }
       />
       {activeLanguage === "Suomi" && (
         <BodyText bgVariant="dark">
-          Teen tällä hetkellä hoitoja kotikäynteinä tai omasta Helsingin
-          keskustassa sijaistevasta asunnostani käsin.
+          Teen tällä hetkellä hoitoja kotikäynteinä Helsingissä.
         </BodyText>
       )}
       {activeLanguage === "English" && (
         <BodyText bgVariant="dark">
-          My appointments are currently held either as home visits or at my
-          apartment in central Helsinki.
+          My appointments are currently held as home visits in Helsinki.
         </BodyText>
       )}
       <BodyText bgVariant="dark">
         {activeLanguage === "Suomi" ? "80€ / käynti" : "80€ / appointment"}
       </BodyText>
       <div className="button-container">
-        <ButtonLink variant="medium" href="#">
+        <ButtonLink variant="medium" href="#yhteystiedot">
           {activeLanguage === "Suomi" ? "Varaa aika" : "Book an appointment"}
         </ButtonLink>
       </div>

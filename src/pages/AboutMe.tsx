@@ -49,8 +49,8 @@ const AboutMe = ({ activeLanguage }: Props): ReactElement => {
             }
             italics={
               activeLanguage === "Suomi"
-                ? "pysyvään helpotukseen"
-                : "to lasting relief"
+                ? "hyvinvoinnin tukemiseen"
+                : "to supporting wellness"
             }
           />
           <BodyText bgVariant="light">

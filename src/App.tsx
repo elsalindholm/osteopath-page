@@ -23,12 +23,20 @@ const Languages = {
 
 export type Language = (typeof Languages)[keyof typeof Languages];
 
+const LANGUAGE_STORAGE_KEY = "activeLanguage";
+
+const getStoredLanguage = (): Language => {
+  const stored = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  return stored === "English" ? "English" : Languages.Finnish;
+};
+
 function App() {
   const [activePage, setActivePage] = useState<Page>(Pages.Main);
-  const [activeLanguage, setActiveLanguage] = useState<Language>(Languages.Finnish);
+  const [activeLanguage, setActiveLanguage] = useState<Language>(getStoredLanguage);
 
   useEffect(() => {
     document.documentElement.lang = activeLanguage === "Suomi" ? "fi" : "en";
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, activeLanguage);
   }, [activeLanguage]);
 
   const navigate = (page: Page, section?: string) => {
