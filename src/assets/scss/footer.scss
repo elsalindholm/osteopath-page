@@ -62,6 +62,35 @@
   margin-top: 16px;
 }
 
+.footer__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include breakpoint(mobile-only) {
+    margin-left: 0;
+  }
+}
+
+.footer__legal-link {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-family: $open-sans;
+  font-size: 14px;
+  letter-spacing: 0.75px;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $text--muted-green;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
 .footer__copyright {
   margin: 0;
   padding-top: 20px;

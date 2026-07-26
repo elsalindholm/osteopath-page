@@ -10,10 +10,29 @@ import type { Page } from "./components/NavBar";
 import Footer from "./components/Footer";
 import { useState, useEffect } from "react";
 import Research from "./pages/Research";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import OmaValvontaSuunnitelma from "./pages/OmaValvontaSuunnitelma";
 
 const Pages: Record<string, Page> = {
   Main: "Main",
   Research: "Research",
+  Privacy: "Privacy",
+  Terms: "Terms",
+  OmaValvontaSuunnitelma: "OmaValvontaSuunnitelma",
+};
+
+const PAGE_PATHS: Partial<Record<Page, string>> = {
+  Privacy: "/tietosuojaseloste",
+  Terms: "/yleiset-varausehdot",
+  OmaValvontaSuunnitelma: "/omavalvontasuunnitelma",
+};
+
+const getPageFromPath = (pathname: string): Page => {
+  const match = (Object.keys(PAGE_PATHS) as Page[]).find(
+    (page) => PAGE_PATHS[page] === pathname,
+  );
+  return match ?? Pages.Main;
 };
 
 const Languages = {
@@ -31,16 +50,31 @@ const getStoredLanguage = (): Language => {
 };
 
 function App() {
-  const [activePage, setActivePage] = useState<Page>(Pages.Main);
-  const [activeLanguage, setActiveLanguage] = useState<Language>(getStoredLanguage);
+  const [activePage, setActivePage] = useState<Page>(() =>
+    getPageFromPath(window.location.pathname),
+  );
+  const [activeLanguage, setActiveLanguage] =
+    useState<Language>(getStoredLanguage);
 
   useEffect(() => {
     document.documentElement.lang = activeLanguage === "Suomi" ? "fi" : "en";
     localStorage.setItem(LANGUAGE_STORAGE_KEY, activeLanguage);
   }, [activeLanguage]);
 
+  useEffect(() => {
+    const handlePopState = () => {
+      setActivePage(getPageFromPath(window.location.pathname));
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
   const navigate = (page: Page, section?: string) => {
     setActivePage(page);
+    const path = PAGE_PATHS[page] ?? "/";
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, "", path);
+    }
     setTimeout(() => {
       if (section) {
         document.querySelector(section)?.scrollIntoView({ behavior: "smooth" });
@@ -52,7 +86,9 @@ function App() {
   return (
     <div className="app">
       <a className="skip-link" href="#main-content">
-        {activeLanguage === "Suomi" ? "Siirry pääsisältöön" : "Skip to main content"}
+        {activeLanguage === "Suomi"
+          ? "Siirry pääsisältöön"
+          : "Skip to main content"}
       </a>
       <h1 className="sr-only">Osteopaatti Elias Lindholm</h1>
       <NavBar
@@ -74,8 +110,19 @@ function App() {
         {activePage == Pages.Research && (
           <Research activeLanguage={activeLanguage} />
         )}
+        {activePage == Pages.Privacy && <PrivacyPolicy />}
+        {activePage == Pages.Terms && (
+          <TermsAndConditions activeLanguage={activeLanguage} />
+        )}
+        {activePage == Pages.OmaValvontaSuunnitelma && (
+          <OmaValvontaSuunnitelma />
+        )}
       </main>
-      <Footer activeLanguage={activeLanguage} setActiveLanguage={setActiveLanguage} />
+      <Footer
+        activeLanguage={activeLanguage}
+        setActiveLanguage={setActiveLanguage}
+        navigate={navigate}
+      />
     </div>
   );
 }

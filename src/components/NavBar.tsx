@@ -3,7 +3,12 @@ import "../assets/scss/navbar.scss";
 import type { Language } from "../App";
 import BrandLogo from "./BrandLogo";
 
-export type Page = "Main" | "Research";
+export type Page =
+  | "Main"
+  | "Research"
+  | "Privacy"
+  | "Terms"
+  | "OmaValvontaSuunnitelma";
 
 interface NavLink {
   page: Page;

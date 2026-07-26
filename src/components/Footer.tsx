@@ -2,13 +2,19 @@ import "../assets/scss/footer.scss";
 import type { Language } from "../App";
 import type { ReactElement } from "react";
 import BrandLogo from "./BrandLogo";
+import type { Page } from "./NavBar";
 
 interface Props {
   activeLanguage: Language;
   setActiveLanguage: (lang: Language) => void;
+  navigate: (page: Page, section?: string) => void;
 }
 
-const Footer = ({ activeLanguage, setActiveLanguage }: Props): ReactElement => {
+const Footer = ({
+  activeLanguage,
+  setActiveLanguage,
+  navigate,
+}: Props): ReactElement => {
   return (
     <footer className="footer">
       <div className="footer__inner">
@@ -42,6 +48,11 @@ const Footer = ({ activeLanguage, setActiveLanguage }: Props): ReactElement => {
               <option value="English">English</option>
             </select>
           </div>
+        </div>
+        <div className="footer__legal">
+          <button className="footer__legal-link" onClick={() => navigate("Terms")}>
+            {activeLanguage === "Suomi" ? "Yleiset varausehdot" : "Booking Terms and Conditions"}
+          </button>
         </div>
       </div>
       <p className="footer__copyright">&copy; 2026 Elias Lindholm</p>
