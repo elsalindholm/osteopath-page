@@ -50,6 +50,9 @@ const Footer = ({
           </div>
         </div>
         <div className="footer__legal">
+          <button className="footer__legal-link" onClick={() => navigate("Privacy")}>
+            {activeLanguage === "Suomi" ? "Tietosuojaseloste" : "Privacy Policy"}
+          </button>
           <button className="footer__legal-link" onClick={() => navigate("Terms")}>
             {activeLanguage === "Suomi" ? "Yleiset varausehdot" : "Booking Terms and Conditions"}
           </button>

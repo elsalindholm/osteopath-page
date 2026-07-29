@@ -51,6 +51,22 @@ const TermsAndConditions = ({ activeLanguage }: Props) => {
             </li>
             <li>
               <p className="body-text body-text--light">
+                Mikäli asiakas saapuu vastaanotolle päihtyneenä tai käyttäytyy
+                vastaanotolla aggressiivisesti tai epäasiallisesti, on
+                palveluntarjoajalla oikeus lopettaa vastaanotto, pyytää
+                asiakasta poistumaan tilasta sekä veloittaa asiakasta käynnistä.
+              </p>
+            </li>
+            <li>
+              <p className="body-text body-text--light">
+                Käyntiä varten varataan 60 minuutin aika, johon kuuluu asiakkaan
+                haastattelu, tutkiminen, hoito sekä kanta-kirjausten tekeminen.
+                Tästä syystä hoitotilanne voi kestää vähemmän kuin 60 minuuttia,
+                jotta kirjausten tekemiselle jää aikaa.
+              </p>
+            </li>
+            <li>
+              <p className="body-text body-text--light">
                 Varaamalla ajan asiakas hyväksyy nämä varausehdot.
               </p>
             </li>
@@ -84,6 +100,22 @@ const TermsAndConditions = ({ activeLanguage }: Props) => {
                 Being late may shorten the appointment to prevent delays for
                 following clients. In that case, you will be charged the price
                 for the booked time.
+              </p>
+            </li>
+            <li>
+              <p className="body-text body-text--light">
+                If a client arrives at the appointment intoxicated or behaves
+                aggressively or inappropriately, the service provider has the
+                right to end the appointment, ask the client to leave, and
+                charge for the visit.
+              </p>
+            </li>
+            <li>
+              <p className="body-text body-text--light">
+                For each visit, a 60-minute slot is booked, which includes the
+                client interview, examination, treatment, and making notes in
+                the records. For this reason, the treatment itself may take less
+                than 60 minutes to allow time for the documentation.
               </p>
             </li>
             <li>

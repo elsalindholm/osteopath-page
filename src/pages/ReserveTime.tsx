@@ -29,20 +29,45 @@ const ReserveTime = ({ activeLanguage }: Props): ReactElement => {
         }
       />
       {activeLanguage === "Suomi" && (
-        <BodyText bgVariant="dark">
-          Teen tällä hetkellä hoitoja kotikäynteinä Helsingissä.
-        </BodyText>
+        <>
+          <BodyText bgVariant="dark">
+            Vastaanottoni on auki tiistaisin ja torstaisin Albertinkatu 17:ssa.
+          </BodyText>
+          <BodyText bgVariant="dark">
+            Elo-, syys- ja lokakuussa saat ensimmäisen käyntisi tarjoushintaan
+            10% alennuksella (72€ / käynti). Tarjoushinta huomioidaan maksun
+            yhteydessä.
+          </BodyText>
+        </>
       )}
       {activeLanguage === "English" && (
-        <BodyText bgVariant="dark">
-          My appointments are currently held as home visits in Helsinki.
-        </BodyText>
+        <>
+          <BodyText bgVariant="dark">
+            My practice is open on Tuesdays and Thursdays at Albertinkatu 17.
+          </BodyText>
+          <BodyText bgVariant="dark">
+            Get 10% off your first appointment (72€ / appointment), for your
+            booking in August, September or October. You will be charged the
+            discounted amount at the end of your appointment.
+          </BodyText>
+        </>
       )}
       <BodyText bgVariant="dark">
-        {activeLanguage === "Suomi" ? "80€ / käynti" : "80€ / appointment"}
+        {activeLanguage === "Suomi"
+          ? "Normaali hinta 80€ / käynti"
+          : "Normal price 80€ / appointment"}
       </BodyText>
       <div className="button-container">
-        <ButtonLink variant="medium" href="#yhteystiedot">
+        <ButtonLink
+          variant="medium"
+          href={
+            activeLanguage === "Suomi"
+              ? "https://nettivaraus6.ajas.fi/fi/df02223c9d93"
+              : "https://nettivaraus6.ajas.fi/en/df02223c9d93"
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {activeLanguage === "Suomi" ? "Varaa aika" : "Book an appointment"}
         </ButtonLink>
       </div>
