@@ -8,7 +8,8 @@ export type Page =
   | "Research"
   | "Privacy"
   | "Terms"
-  | "OmaValvontaSuunnitelma";
+  | "OmaValvontaSuunnitelma"
+  | "KiitosVarauksestasi";
 
 interface NavLink {
   page: Page;

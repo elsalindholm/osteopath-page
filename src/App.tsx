@@ -13,6 +13,7 @@ import Research from "./pages/Research";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import OmaValvontaSuunnitelma from "./pages/OmaValvontaSuunnitelma";
+import KiitosVarauksestasi from "./pages/KiitosVarauksestasi";
 
 const Pages: Record<string, Page> = {
   Main: "Main",
@@ -20,12 +21,14 @@ const Pages: Record<string, Page> = {
   Privacy: "Privacy",
   Terms: "Terms",
   OmaValvontaSuunnitelma: "OmaValvontaSuunnitelma",
+  KiitosVarauksestasi: "KiitosVarauksestasi",
 };
 
 const PAGE_PATHS: Partial<Record<Page, string>> = {
   Privacy: "/tietosuojaseloste",
   Terms: "/yleiset-varausehdot",
   OmaValvontaSuunnitelma: "/omavalvontasuunnitelma",
+  KiitosVarauksestasi: "/kiitos-varauksestasi",
 };
 
 const getPageFromPath = (pathname: string): Page => {
@@ -117,6 +120,7 @@ function App() {
         {activePage == Pages.OmaValvontaSuunnitelma && (
           <OmaValvontaSuunnitelma />
         )}
+        {activePage == Pages.KiitosVarauksestasi && <KiitosVarauksestasi />}
       </main>
       <Footer
         activeLanguage={activeLanguage}
